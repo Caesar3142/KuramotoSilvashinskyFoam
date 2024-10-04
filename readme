@@ -1,0 +1,29 @@
+ABOUT THE EQUATION
+The basic equation is:
+ddt(u)+laplacian(u)+second order laplacian(u)
+but, in openfoam, we cannot solve it in the same matrix, so we have to separate the variable especially for the second order laplacian.
+v = laplacian(u), w = laplacian(v)
+
+then the equation become:
+ddt(u) + v + w
+
+But, the dimensions are not consistent (which makes the addition operation cannot be done), so we have to multiply it with coefficients with certain dimensions to make the equation non dimensional.
+
+Let say, the dimension of u is in length, u [0 1 0 0 0 0 0]
+
+we can reconstruct the equation as follows:
+A*ddt(u) + B*v + C*w
+
+then calculate the dimension
+ddt(u) [0 1 -1 0 0 0 0] --> A [0 -1 1 0 0 0 0]
+v= laplacian(u)
+v = [0 -1 0 0 0 0 0] --> B [0 1 0 0 0 0 0]
+w = laplacian(w)
+w [0 -3 0 0 0 0 0] --> C [0 3 0 0 0 0 0]
+
+HOW TO COMPILE
+just run "wmake", and "KSfoam" will be executable
+
+HOW TO RUN
+just make the mesh via "blockMesh", then run with "KSfoam"
+you can edit the mesh in blockMesh, and change the initial and boundary conditions in 0 folder

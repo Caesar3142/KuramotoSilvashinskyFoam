@@ -1,0 +1,4 @@
+SOURCE = \
+KSfoam.C \
+
+# sources

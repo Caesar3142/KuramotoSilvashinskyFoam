@@ -1,0 +1,29 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      u;
+}
+
+dimensions      [0 1 0 0 0 0 0];
+internalField   uniform 1;  // Initial value of u
+boundaryField
+{
+    inlet
+    {
+        type            fixedValue;
+        value           uniform 0;
+    }
+
+    outlet
+    {
+        type            fixedValue;
+        value           uniform 0;
+    }
+    
+    sides
+    {
+        type            empty;  // For 1D case, the side boundaries are set to empty
+    }
+}

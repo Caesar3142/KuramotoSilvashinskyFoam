@@ -1,0 +1,27 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      w;
+}
+
+dimensions      [0 -3 0 0 0 0 0];
+internalField   uniform 0;  // Initial value of w
+boundaryField
+{
+    inlet
+    {
+        type           zeroGradient;
+    }
+
+    outlet
+    {
+        type           zeroGradient;
+    }
+    
+    sides
+    {
+        type            empty;  // For 1D case, the side boundaries are set to empty
+    }
+}

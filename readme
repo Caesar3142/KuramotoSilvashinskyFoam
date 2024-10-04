@@ -27,3 +27,6 @@ just run "wmake", and "KSfoam" will be executable
 HOW TO RUN
 just make the mesh via "blockMesh", then run with "KSfoam"
 you can edit the mesh in blockMesh, and change the initial and boundary conditions in 0 folder
+
+//*************************************** caesar wiratama ************************************ //
+//*************************************** pttensor.com *************************************** //
